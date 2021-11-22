@@ -64,3 +64,11 @@ Login failed for user 'mkaris1'.
 2021-11-22 08:51:47.2606|INFO|NorthWindConsole.Program|Program ended
 2021-11-22 08:53:11.9387|INFO|NorthWindConsole.Program|Program started
 2021-11-22 08:53:13.3961|INFO|NorthWindConsole.Program|Option g selected
+2021-11-22 09:13:46.6529|INFO|NorthWindConsole.Program|Option q selected
+2021-11-22 09:13:46.6529|INFO|NorthWindConsole.Program|Program ended
+2021-11-22 09:13:53.8452|INFO|NorthWindConsole.Program|Program started
+2021-11-22 09:13:55.5518|INFO|NorthWindConsole.Program|Option 5 selected
+2021-11-22 09:14:24.7498|INFO|NorthWindConsole.Program|Validation passed
+2021-11-22 09:14:24.7627|INFO|NorthWindConsole.Program|Option  selected
+2021-11-22 09:14:37.3396|INFO|NorthWindConsole.Program|Option q selected
+2021-11-22 09:14:37.3396|INFO|NorthWindConsole.Program|Program ended

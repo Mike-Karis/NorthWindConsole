@@ -118,7 +118,7 @@ namespace NorthWindConsole
                                     }
                                 }
                                 else if(choice=="5"){
-                                    Product product = new Product();
+                                Product product = new Product();
                                 Console.WriteLine("Enter Product Name:");
                                 product.ProductName = Console.ReadLine();
                                 Console.WriteLine("Enter the Supplier ID:");
