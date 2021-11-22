@@ -1,0 +1,58 @@
+2021-11-08 08:37:49.5161|INFO|NorthWindConsole.Program|Program started
+2021-11-08 08:37:49.6130|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:00:31.6283|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:00:34.2931|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:03:52.1119|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:03:54.0511|INFO|NorthWindConsole.Program|Option 1 selected
+2021-11-08 09:04:07.3237|ERROR|NorthWindConsole.Program|Cannot open database "NWConsole_88_MJK" requested by the login. The login failed.
+Login failed for user 'mkaris1'.
+2021-11-08 09:04:07.3498|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:05:36.5390|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:05:38.3033|INFO|NorthWindConsole.Program|Option 1 selected
+2021-11-08 09:05:45.3213|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:05:45.3213|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:24:34.4730|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:24:35.8281|INFO|NorthWindConsole.Program|Option 2 selected
+2021-11-08 09:25:04.0248|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:25:04.0485|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:28:24.5548|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:28:26.0510|INFO|NorthWindConsole.Program|Option 2 selected
+2021-11-08 09:28:44.7099|INFO|NorthWindConsole.Program|Validation passed
+2021-11-08 09:28:51.2938|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:28:51.2966|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:29:58.4727|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:29:59.7616|INFO|NorthWindConsole.Program|Option 2 selected
+2021-11-08 09:30:01.2989|ERROR|NorthWindConsole.Program|CategoryName : YO - Enter the name!
+2021-11-08 09:30:15.7135|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:30:15.7308|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:34:09.0834|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:34:14.7234|INFO|NorthWindConsole.Program|Option 2 selected
+2021-11-08 09:34:28.5392|ERROR|NorthWindConsole.Program|CategoryName : Name exists
+2021-11-08 09:34:35.1814|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:34:35.2036|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:37:23.6686|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:37:25.3289|INFO|NorthWindConsole.Program|Option 3 selected
+2021-11-08 09:37:29.7274|INFO|NorthWindConsole.Program|CategoryId 4 selected
+2021-11-08 09:37:33.4547|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:37:33.4646|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:38:39.7735|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:38:41.3514|INFO|NorthWindConsole.Program|Option 3 selected
+2021-11-08 09:38:45.1485|INFO|NorthWindConsole.Program|CategoryId 6 selected
+2021-11-08 09:38:50.9517|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:38:50.9661|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:40:15.1615|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:40:18.5323|INFO|NorthWindConsole.Program|Option 3 selected
+2021-11-08 09:40:22.2985|INFO|NorthWindConsole.Program|CategoryId 3 selected
+2021-11-08 09:40:57.6047|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:40:57.6047|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:43:23.7671|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:43:24.6488|INFO|NorthWindConsole.Program|Option 3 selected
+2021-11-08 09:43:29.2461|INFO|NorthWindConsole.Program|CategoryId 3 selected
+2021-11-08 09:45:46.6956|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:45:46.7039|INFO|NorthWindConsole.Program|Program ended
+2021-11-08 09:45:56.4739|INFO|NorthWindConsole.Program|Program started
+2021-11-08 09:45:58.0736|INFO|NorthWindConsole.Program|Option 4 selected
+2021-11-08 09:46:08.3473|INFO|NorthWindConsole.Program|Option 3 selected
+2021-11-08 09:46:11.1710|INFO|NorthWindConsole.Program|CategoryId 3 selected
+2021-11-08 09:46:37.9723|INFO|NorthWindConsole.Program|Option q selected
+2021-11-08 09:46:37.9723|INFO|NorthWindConsole.Program|Program ended
