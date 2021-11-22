@@ -117,6 +117,55 @@ namespace NorthWindConsole
                                         }
                                     }
                                 }
+                                else if(choice=="5"){
+                                    Product product = new Product();
+                                Console.WriteLine("Enter Product Name:");
+                                product.ProductName = Console.ReadLine();
+                                Console.WriteLine("Enter the Supplier ID:");
+                                product.SupplierId = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter the Category ID:");
+                                product.CategoryId = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter Quantity Per Unit:");
+                                product.QuantityPerUnit = Console.ReadLine();
+                                Console.WriteLine("Enter the Unit Price:");
+                                product.UnitPrice = Convert.ToInt32(Console.ReadLine());
+                                Console.WriteLine("Enter Units in Stock:");
+                                product.UnitsInStock = Convert.ToInt16(Console.ReadLine());
+                                Console.WriteLine("Enter the Units on Order:");
+                                product.UnitsOnOrder = Convert.ToInt16(Console.ReadLine());
+                                Console.WriteLine("Enter the Reorder Level:");
+                                product.ReorderLevel = Convert.ToInt16(Console.ReadLine());
+                                Console.WriteLine("Enter Discontinued:");
+                                product.Discontinued = Convert.ToBoolean(Console.ReadLine());
+                                
+                                ValidationContext context = new ValidationContext(product, null, null);
+                                List<ValidationResult> results = new List<ValidationResult>();
+
+                                var isValid = Validator.TryValidateObject(product, context, results, true);
+                                if (isValid)
+                                    {
+                                    var db = new Northwind_88_MJKContext();
+                                    // check for unique name
+                                    if (db.Products.Any(p => p.ProductName == product.ProductName))
+                                        {
+                                        // generate validation error
+                                        isValid = false;
+                                        results.Add(new ValidationResult("Name exists", new string[] { "ProductName" }));
+                                        }
+                                    else
+                                        {
+                                        logger.Info("Validation passed");
+                                        // TODO: save category to db
+                                        }
+                                    }
+                                if (!isValid)
+                                    {
+                                    foreach (var result in results)
+                                        {
+                                            logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
+                                        }
+                                    }
+                                }
                             Console.WriteLine();
 
                         } while (choice.ToLower() != "q");
