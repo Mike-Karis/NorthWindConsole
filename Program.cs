@@ -28,10 +28,16 @@ namespace NorthWindConsole
                             Console.WriteLine("2) Add Category");
                             Console.WriteLine("3) Display Category and related products");
                             Console.WriteLine("4) Display all Categories and their related products");
+                            Console.WriteLine("5) Add Product");
+                            Console.WriteLine("6) Edit Product");
+                            Console.WriteLine("7) Display all Products");
+                            Console.WriteLine("8) Display specific Product");
                             Console.WriteLine("\"q\" to quit");
                             choice = Console.ReadLine();
                             Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                             logger.Info($"Option {choice} selected");
+                            Console.ForegroundColor = ConsoleColor.White;
                             if (choice == "1")
                                 {
                                 var db = new Northwind_88_MJKContext();
@@ -70,7 +76,9 @@ namespace NorthWindConsole
                                         }
                                     else
                                         {
+                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                                         logger.Info("Validation passed");
+                                        Console.ForegroundColor = ConsoleColor.White;
                                         // TODO: save category to db
                                         }
                                     }
@@ -78,7 +86,9 @@ namespace NorthWindConsole
                                     {
                                     foreach (var result in results)
                                         {
+                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                                             logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
+                                            Console.ForegroundColor = ConsoleColor.White;
                                         }
                                     }
                                 }
@@ -96,7 +106,9 @@ namespace NorthWindConsole
                                     Console.ForegroundColor = ConsoleColor.White;
                                     int id = int.Parse(Console.ReadLine());
                                     Console.Clear();
+                                    Console.ForegroundColor = ConsoleColor.DarkYellow;
                                     logger.Info($"CategoryId {id} selected");
+                                    Console.ForegroundColor = ConsoleColor.White;
                                     Category category = db.Categories.Include("Products").FirstOrDefault(c => c.CategoryId == id);
                                     Console.WriteLine($"{category.CategoryName} - {category.Description}");
                                     foreach (Product p in category.Products)
@@ -162,9 +174,107 @@ namespace NorthWindConsole
                                     {
                                     foreach (var result in results)
                                         {
+                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
                                             logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
+                                            Console.ForegroundColor = ConsoleColor.White;
                                         }
                                     }
+                                }
+                                else if(choice=="6"){
+
+                                }
+                                else if(choice=="7"){
+                                
+                                string choice2;
+                                // Console.WriteLine("1) Display all Products");
+                                // Console.WriteLine("2) Display discontinued Products");
+                                // Console.WriteLine("3) Display active Products");
+                                // choice2 = Console.ReadLine();
+                                // Console.Clear();
+                                // Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                // logger.Info($"Option {choice2} selected");
+                                // Console.ForegroundColor = ConsoleColor.White;
+
+                                
+                                var db = new Northwind_88_MJKContext();
+                                var query = db.Products.OrderBy(p => p.ProductName);
+
+                                // Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                // Console.WriteLine($"{query.Count()} records returned");
+                                // Console.ForegroundColor = ConsoleColor.White;
+
+                                //string choice2;
+                                Console.WriteLine("1) Display all Products");
+                                Console.WriteLine("2) Display discontinued Products");
+                                Console.WriteLine("3) Display active Products");
+                                choice2 = Console.ReadLine();
+                                Console.Clear();
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                logger.Info($"Option {choice2} selected");
+                                Console.ForegroundColor = ConsoleColor.White;
+                                if(choice2=="1"){
+                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    Console.WriteLine($"{query.Count()} records returned");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    foreach (var item in query)
+                                    {
+                                        if(item.Discontinued==true){
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                        }
+                                        else{
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                        }
+                                        Console.WriteLine($"{item.ProductName}");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                    }
+                                Console.ForegroundColor = ConsoleColor.White;
+                                }
+                                else if(choice2=="2"){
+                                    int amount1=0;
+                                    foreach(var item in query){
+                                        if(item.Discontinued==true){
+                                            amount1++;
+                                        }
+                                    }
+                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    Console.WriteLine($"{amount1} records returned");
+                                    Console.ForegroundColor = ConsoleColor.White;
+                                    
+                                foreach (var item in query)
+                                    {
+                                        if(item.Discontinued==true){
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.WriteLine($"{item.ProductName}");
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                        }
+
+                                    }
+                                }
+                                else if(choice2=="3"){
+                                    int amount2=0;
+                                    foreach(var item in query){
+                                        if(item.Discontinued==false){
+                                            amount2++;
+                                        }
+                                    }
+                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                    Console.WriteLine($"{amount2} records returned");
+                                    Console.ForegroundColor = ConsoleColor.White;
+
+                                     foreach (var item in query)
+                                    {
+                                        if(item.Discontinued==false){
+                                            Console.ForegroundColor = ConsoleColor.Green;
+                                            Console.WriteLine($"{item.ProductName}");
+                                            Console.ForegroundColor = ConsoleColor.White;
+                                        }
+
+                                    }   
+                                }
+                                Console.ForegroundColor = ConsoleColor.White;
+                                }
+                                else if(choice=="8"){
+                                        
                                 }
                             Console.WriteLine();
 
@@ -172,7 +282,9 @@ namespace NorthWindConsole
                 }
             catch (Exception ex)
             {
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
                 logger.Error(ex.Message);
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;

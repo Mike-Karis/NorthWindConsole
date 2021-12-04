@@ -72,3 +72,43 @@ Login failed for user 'mkaris1'.
 2021-11-22 09:14:24.7627|INFO|NorthWindConsole.Program|Option  selected
 2021-11-22 09:14:37.3396|INFO|NorthWindConsole.Program|Option q selected
 2021-11-22 09:14:37.3396|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 15:38:40.6026|INFO|NorthWindConsole.Program|Program started
+2021-12-04 15:38:45.1192|INFO|NorthWindConsole.Program|Option 1 selected
+2021-12-04 15:39:15.4530|INFO|NorthWindConsole.Program|Option 3 selected
+2021-12-04 15:39:20.4262|INFO|NorthWindConsole.Program|CategoryId 8 selected
+2021-12-04 15:39:26.4229|INFO|NorthWindConsole.Program|Option 4 selected
+2021-12-04 15:39:31.9594|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 15:39:31.9594|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 15:49:28.0949|INFO|NorthWindConsole.Program|Program started
+2021-12-04 15:49:30.8486|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 15:50:50.5511|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 15:50:50.5511|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 16:03:57.3438|INFO|NorthWindConsole.Program|Program started
+2021-12-04 16:04:01.8555|INFO|NorthWindConsole.Program|Option  selected
+2021-12-04 16:04:03.3306|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:04:07.4314|INFO|NorthWindConsole.Program|Option 1 selected
+2021-12-04 16:04:17.4759|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 16:04:17.4759|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 16:11:58.0308|INFO|NorthWindConsole.Program|Program started
+2021-12-04 16:12:01.4581|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:12:11.3558|INFO|NorthWindConsole.Program|Option 1 selected
+2021-12-04 16:12:32.8535|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:12:35.5569|INFO|NorthWindConsole.Program|Option 2 selected
+2021-12-04 16:12:39.8485|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:12:41.5355|INFO|NorthWindConsole.Program|Option 3 selected
+2021-12-04 16:12:54.3309|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 16:12:54.3415|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 16:13:10.5707|INFO|NorthWindConsole.Program|Program started
+2021-12-04 16:13:19.1533|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:13:24.2044|INFO|NorthWindConsole.Program|Option 3 selected
+2021-12-04 16:17:36.5286|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 16:17:36.5286|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 16:17:42.8116|INFO|NorthWindConsole.Program|Program started
+2021-12-04 16:17:44.6901|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:17:47.8589|INFO|NorthWindConsole.Program|Option 1 selected
+2021-12-04 16:17:53.2111|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:17:55.1229|INFO|NorthWindConsole.Program|Option 2 selected
+2021-12-04 16:17:59.9552|INFO|NorthWindConsole.Program|Option 7 selected
+2021-12-04 16:18:02.2683|INFO|NorthWindConsole.Program|Option 3 selected
+2021-12-04 16:18:20.6810|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 16:18:20.6810|INFO|NorthWindConsole.Program|Program ended
