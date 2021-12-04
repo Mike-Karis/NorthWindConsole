@@ -273,8 +273,23 @@ namespace NorthWindConsole
                                 }
                                 Console.ForegroundColor = ConsoleColor.White;
                                 }
+
                                 else if(choice=="8"){
-                                        
+                                string choice3;
+
+                                var db = new Northwind_88_MJKContext();
+                                var query = db.Products.OrderBy(p => p.ProductName);
+
+                                Console.WriteLine("Enter Product Name");
+                                choice3=Console.ReadLine();
+                                foreach(var item in query){
+                                    if(item.ProductName==choice3){
+                                        if(item.Discontinued==true){Console.ForegroundColor = ConsoleColor.Red;}
+                                        else{Console.ForegroundColor = ConsoleColor.Green;}
+                                    Console.WriteLine($"Product Name: {item.ProductName} | ProductID: {item.ProductId} | SupplierID: {item.SupplierId} | CategoryID: {item.CategoryId} | QuantityPerUnit: {item.QuantityPerUnit} | UnitPrice: {item.UnitPrice} | UnitsInStock: {item.UnitsInStock} | UnitsOnOrder: {item.UnitsOnOrder} | ReorderLevel: {item.ReorderLevel} | Discontinued: {item.Discontinued}");
+                                    Console.ForegroundColor = ConsoleColor.White;}
+                                }
+
                                 }
                             Console.WriteLine();
 
