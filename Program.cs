@@ -135,7 +135,9 @@ namespace NorthWindConsole
                                 if (product != null)
                                     {
                                         db.AddProduct(product);
+                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
                                         logger.Info("Blog added - {name}", product.ProductName);
+                                        Console.ForegroundColor = ConsoleColor.White;
                                     }
 
                                 }
