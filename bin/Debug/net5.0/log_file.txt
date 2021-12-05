@@ -281,3 +281,15 @@ Login failed for user 'mkaris1'.
 2021-12-04 19:17:18.2426|INFO|NorthWindConsole.Program|Validation passed
 2021-12-04 19:17:18.4021|INFO|NorthWindConsole.Program|Blog (id: 78) updated
 2021-12-04 19:17:22.9520|INFO|NorthWindConsole.Program|Option 8 selected
+2021-12-04 19:19:11.8350|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 19:19:11.8350|INFO|NorthWindConsole.Program|Program ended
+2021-12-04 19:22:48.2098|INFO|NorthWindConsole.Program|Program started
+2021-12-04 19:22:49.9637|INFO|NorthWindConsole.Program|Option 1 selected
+2021-12-04 19:22:59.3650|INFO|NorthWindConsole.Program|Option 3 selected
+2021-12-04 19:23:02.3497|INFO|NorthWindConsole.Program|CategoryId 8 selected
+2021-12-04 19:23:23.1682|INFO|NorthWindConsole.Program|Option 4 selected
+2021-12-04 19:23:52.3451|INFO|NorthWindConsole.Program|Option 2 selected
+2021-12-04 19:23:57.7997|INFO|NorthWindConsole.Program|Validation passed
+2021-12-04 19:24:02.0941|INFO|NorthWindConsole.Program|Option 1 selected
+2021-12-04 19:25:45.8873|INFO|NorthWindConsole.Program|Option q selected
+2021-12-04 19:25:45.8873|INFO|NorthWindConsole.Program|Program ended

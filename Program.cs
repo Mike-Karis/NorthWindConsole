@@ -134,71 +134,21 @@ namespace NorthWindConsole
                                 Product product = InputProduct(db);
                                 if (product != null)
                                     {
-                                        //blog.BlogId = BlogId;
                                         db.AddProduct(product);
                                         logger.Info("Blog added - {name}", product.ProductName);
                                     }
 
-                                //Product product = new Product();
-                                // Console.WriteLine("Enter Product Name:");
-                                // product.ProductName = Console.ReadLine();
-                                // Console.WriteLine("Enter the Supplier ID:");
-                                // product.SupplierId = Convert.ToInt32(Console.ReadLine());
-                                // Console.WriteLine("Enter the Category ID:");
-                                // product.CategoryId = Convert.ToInt32(Console.ReadLine());
-                                // Console.WriteLine("Enter Quantity Per Unit:");
-                                // product.QuantityPerUnit = Console.ReadLine();
-                                // Console.WriteLine("Enter the Unit Price:");
-                                // product.UnitPrice = Convert.ToInt32(Console.ReadLine());
-                                // Console.WriteLine("Enter Units in Stock:");
-                                // product.UnitsInStock = Convert.ToInt16(Console.ReadLine());
-                                // Console.WriteLine("Enter the Units on Order:");
-                                // product.UnitsOnOrder = Convert.ToInt16(Console.ReadLine());
-                                // Console.WriteLine("Enter the Reorder Level:");
-                                // product.ReorderLevel = Convert.ToInt16(Console.ReadLine());
-                                // Console.WriteLine("Enter Discontinued:");
-                                // product.Discontinued = Convert.ToBoolean(Console.ReadLine());
-                                
-                                // ValidationContext context = new ValidationContext(product, null, null);
-                                // List<ValidationResult> results = new List<ValidationResult>();
-
-                                // var isValid = Validator.TryValidateObject(product, context, results, true);
-                                // if (isValid)
-                                //     {
-                                //     //var db = new Northwind_88_MJKContext();
-                                //     // check for unique name
-                                //     if (db.Products.Any(p => p.ProductName == product.ProductName))
-                                //         {
-                                //         // generate validation error
-                                //         isValid = false;
-                                //         results.Add(new ValidationResult("Name exists", new string[] { "ProductName" }));
-                                //         }
-                                //     else
-                                //         {
-                                //         logger.Info("Validation passed");
-                                //         // TODO: save category to db
-                                //         }
-                                //     }
-                                // if (!isValid)
-                                //     {
-                                //     foreach (var result in results)
-                                //         {
-                                //             Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                //             logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
-                                //             Console.ForegroundColor = ConsoleColor.White;
-                                //         }
-                                //     }
                                 }
                                 else if(choice=="6"){
 
-                                // edit blog
+                                
                                 Console.WriteLine("Choose which Product you want to edit:");
                                 var db = new Northwind_88_MJKContext();
                                 var Prod = GetProduct(db);
                                 var query = db.Products.OrderBy(p => p.ProductName);
                                 if (db != null)
                                 {
-                                    // input blog
+                                    
                                     Product UpdatedProduct = InputProduct(db);
                                     if (UpdatedProduct != null)
                                     {
@@ -295,6 +245,9 @@ namespace NorthWindConsole
 
                                 Console.WriteLine("Enter Product Name");
                                 choice3=Console.ReadLine();
+                                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                logger.Info($"{choice3} selected");
+                                Console.ForegroundColor = ConsoleColor.White;
                                 foreach(var item in query){
                                     if(item.ProductName==choice3){
                                         if(item.Discontinued==true){Console.ForegroundColor = ConsoleColor.Red;}
