@@ -8,18 +8,18 @@ namespace NorthWindConsole.Model
     {
         public DbSet<Product> products { get; set; }
 
-        public void AddBlog(Product products)
+        public void AddProduct(Product products)
         {
             //base.Configuration.LazyLoadingEnabled = false; 
             this.products.Add(products);
             this.SaveChanges();
         }
-          public void DeleteBlog(Product products)
+          public void DeleteProduct(Product products)
         {
             this.products.Remove(products);
             this.SaveChanges();
         }
-         public void EditBlog(Product UpdatedProducts)
+         public void EditProduct(Product UpdatedProducts)
         {
             Product blog = this.products.Find(UpdatedProducts.ProductId);
             blog.ProductName = UpdatedProducts.ProductName;

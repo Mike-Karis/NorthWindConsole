@@ -130,80 +130,93 @@ namespace NorthWindConsole
                                     }
                                 }
                                 else if(choice=="5"){
-                                Product product = new Product();
-                                Console.WriteLine("Enter Product Name:");
-                                product.ProductName = Console.ReadLine();
-                                Console.WriteLine("Enter the Supplier ID:");
-                                product.SupplierId = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Enter the Category ID:");
-                                product.CategoryId = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Enter Quantity Per Unit:");
-                                product.QuantityPerUnit = Console.ReadLine();
-                                Console.WriteLine("Enter the Unit Price:");
-                                product.UnitPrice = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine("Enter Units in Stock:");
-                                product.UnitsInStock = Convert.ToInt16(Console.ReadLine());
-                                Console.WriteLine("Enter the Units on Order:");
-                                product.UnitsOnOrder = Convert.ToInt16(Console.ReadLine());
-                                Console.WriteLine("Enter the Reorder Level:");
-                                product.ReorderLevel = Convert.ToInt16(Console.ReadLine());
-                                Console.WriteLine("Enter Discontinued:");
-                                product.Discontinued = Convert.ToBoolean(Console.ReadLine());
-                                
-                                ValidationContext context = new ValidationContext(product, null, null);
-                                List<ValidationResult> results = new List<ValidationResult>();
+                                var db = new Northwind_88_MJKContext();
+                                Product product = InputProduct(db);
+                                if (product != null)
+                                    {
+                                        //blog.BlogId = BlogId;
+                                        db.AddProduct(product);
+                                        logger.Info("Blog added - {name}", product.ProductName);
+                                    }
 
-                                var isValid = Validator.TryValidateObject(product, context, results, true);
-                                if (isValid)
-                                    {
-                                    var db = new Northwind_88_MJKContext();
-                                    // check for unique name
-                                    if (db.Products.Any(p => p.ProductName == product.ProductName))
-                                        {
-                                        // generate validation error
-                                        isValid = false;
-                                        results.Add(new ValidationResult("Name exists", new string[] { "ProductName" }));
-                                        }
-                                    else
-                                        {
-                                        logger.Info("Validation passed");
-                                        // TODO: save category to db
-                                        }
-                                    }
-                                if (!isValid)
-                                    {
-                                    foreach (var result in results)
-                                        {
-                                            Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                            logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
-                                            Console.ForegroundColor = ConsoleColor.White;
-                                        }
-                                    }
+                                //Product product = new Product();
+                                // Console.WriteLine("Enter Product Name:");
+                                // product.ProductName = Console.ReadLine();
+                                // Console.WriteLine("Enter the Supplier ID:");
+                                // product.SupplierId = Convert.ToInt32(Console.ReadLine());
+                                // Console.WriteLine("Enter the Category ID:");
+                                // product.CategoryId = Convert.ToInt32(Console.ReadLine());
+                                // Console.WriteLine("Enter Quantity Per Unit:");
+                                // product.QuantityPerUnit = Console.ReadLine();
+                                // Console.WriteLine("Enter the Unit Price:");
+                                // product.UnitPrice = Convert.ToInt32(Console.ReadLine());
+                                // Console.WriteLine("Enter Units in Stock:");
+                                // product.UnitsInStock = Convert.ToInt16(Console.ReadLine());
+                                // Console.WriteLine("Enter the Units on Order:");
+                                // product.UnitsOnOrder = Convert.ToInt16(Console.ReadLine());
+                                // Console.WriteLine("Enter the Reorder Level:");
+                                // product.ReorderLevel = Convert.ToInt16(Console.ReadLine());
+                                // Console.WriteLine("Enter Discontinued:");
+                                // product.Discontinued = Convert.ToBoolean(Console.ReadLine());
+                                
+                                // ValidationContext context = new ValidationContext(product, null, null);
+                                // List<ValidationResult> results = new List<ValidationResult>();
+
+                                // var isValid = Validator.TryValidateObject(product, context, results, true);
+                                // if (isValid)
+                                //     {
+                                //     //var db = new Northwind_88_MJKContext();
+                                //     // check for unique name
+                                //     if (db.Products.Any(p => p.ProductName == product.ProductName))
+                                //         {
+                                //         // generate validation error
+                                //         isValid = false;
+                                //         results.Add(new ValidationResult("Name exists", new string[] { "ProductName" }));
+                                //         }
+                                //     else
+                                //         {
+                                //         logger.Info("Validation passed");
+                                //         // TODO: save category to db
+                                //         }
+                                //     }
+                                // if (!isValid)
+                                //     {
+                                //     foreach (var result in results)
+                                //         {
+                                //             Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                //             logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
+                                //             Console.ForegroundColor = ConsoleColor.White;
+                                //         }
+                                //     }
                                 }
                                 else if(choice=="6"){
 
+                                // edit blog
+                                Console.WriteLine("Choose which Product you want to edit:");
+                                var db = new Northwind_88_MJKContext();
+                                var Prod = GetProduct(db);
+                                var query = db.Products.OrderBy(p => p.ProductName);
+                                if (db != null)
+                                {
+                                    // input blog
+                                    Product UpdatedProduct = InputProduct(db);
+                                    if (UpdatedProduct != null)
+                                    {
+                                        UpdatedProduct.ProductId = Prod.ProductId;
+                                        db.EditProduct(UpdatedProduct);
+                                        Console.ForegroundColor = ConsoleColor.DarkYellow;
+                                        logger.Info($"Blog (id: {Prod.ProductId}) updated");
+                                        Console.ForegroundColor = ConsoleColor.White;
+                                    }
+                                }
+                    
                                 }
                                 else if(choice=="7"){
                                 
-                                string choice2;
-                                // Console.WriteLine("1) Display all Products");
-                                // Console.WriteLine("2) Display discontinued Products");
-                                // Console.WriteLine("3) Display active Products");
-                                // choice2 = Console.ReadLine();
-                                // Console.Clear();
-                                // Console.ForegroundColor = ConsoleColor.DarkYellow;
-                                // logger.Info($"Option {choice2} selected");
-                                // Console.ForegroundColor = ConsoleColor.White;
-
-                                
+                                string choice2;               
                                 var db = new Northwind_88_MJKContext();
                                 var query = db.Products.OrderBy(p => p.ProductName);
 
-                                // Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                // Console.WriteLine($"{query.Count()} records returned");
-                                // Console.ForegroundColor = ConsoleColor.White;
-
-                                //string choice2;
                                 Console.WriteLine("1) Display all Products");
                                 Console.WriteLine("2) Display discontinued Products");
                                 Console.WriteLine("3) Display active Products");
@@ -305,6 +318,86 @@ namespace NorthWindConsole
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             logger.Info("Program ended");
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+
+        public static Product GetProduct(Northwind_88_MJKContext db)
+        {
+            // display all blogs
+            var blogs = db.Products.OrderBy(b => b.ProductId);
+            foreach (Product b in blogs)
+            {
+                Console.WriteLine($"{b.ProductId}: {b.ProductName}");
+            }
+            if (int.TryParse(Console.ReadLine(), out int BlogId))
+            {
+                Product blog = db.Products.FirstOrDefault(b => b.ProductId == BlogId);
+                if (blog != null)
+                {
+                    return blog;
+                }
+            }
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            logger.Error("Invalid Blog Id");
+            Console.ForegroundColor = ConsoleColor.White;
+            return null;
+        }
+
+        public static Product InputProduct(Northwind_88_MJKContext db)
+        {
+            Product product = new Product();
+            // Console.WriteLine("Enter the Product name");
+            // blog.ProductName = Console.ReadLine();
+            Console.WriteLine("Enter Product Name:");
+            product.ProductName = Console.ReadLine();
+            Console.WriteLine("Enter the Supplier ID:");
+            product.SupplierId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the Category ID:");
+            product.CategoryId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Quantity Per Unit:");
+            product.QuantityPerUnit = Console.ReadLine();
+            Console.WriteLine("Enter the Unit Price:");
+            product.UnitPrice = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Units in Stock:");
+            product.UnitsInStock = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Enter the Units on Order:");
+            product.UnitsOnOrder = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Enter the Reorder Level:");
+            product.ReorderLevel = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Enter Discontinued:");
+            product.Discontinued = Convert.ToBoolean(Console.ReadLine());
+
+            ValidationContext context = new ValidationContext(product, null, null);
+            List<ValidationResult> results = new List<ValidationResult>();
+
+            var isValid = Validator.TryValidateObject(product, context, results, true);
+            if (isValid)
+            {
+                  // check for unique name
+                if (db.Products.Any(b => b.ProductName == product.ProductName))
+                {
+                    // generate validation error
+                    isValid = false;
+                    results.Add(new ValidationResult("Blog name exists", new string[] { "Name" }));
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    logger.Info("Validation passed");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+            }
+            if (!isValid)
+            {
+                foreach (var result in results)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    logger.Error($"{result.MemberNames.First()} : {result.ErrorMessage}");
+                    Console.ForegroundColor = ConsoleColor.White;
+                }
+                return null;
+            }
+            return product;
         }
     }
 }

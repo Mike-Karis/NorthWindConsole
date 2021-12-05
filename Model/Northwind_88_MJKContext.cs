@@ -29,6 +29,41 @@ namespace NorthWindConsole.Model
         public virtual DbSet<Shipper> Shippers { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
         public virtual DbSet<Territory> Territories { get; set; }
+        //public DbSet<Product> prod { get; set; }
+
+        public void AddProduct(Product products)
+        {
+            //base.Configuration.LazyLoadingEnabled = false; 
+            this.Products.Add(products);
+            this.SaveChanges();
+        }
+          public void DeleteProduct(Product products)
+        {
+            this.Products.Remove(products);
+            this.SaveChanges();
+        }
+         public void EditProduct(Product UpdatedProducts)
+        {
+            Product blog = this.Products.Find(UpdatedProducts.ProductId);
+            blog.ProductName = UpdatedProducts.ProductName;
+            blog.SupplierId=UpdatedProducts.SupplierId;
+            blog.CategoryId=UpdatedProducts.CategoryId;
+            blog.QuantityPerUnit=UpdatedProducts.QuantityPerUnit;
+            blog.UnitPrice=UpdatedProducts.UnitPrice;
+            blog.UnitsInStock=UpdatedProducts.UnitsInStock;
+            blog.UnitsOnOrder=UpdatedProducts.UnitsOnOrder;
+            blog.ReorderLevel=UpdatedProducts.ReorderLevel;
+            blog.Discontinued=UpdatedProducts.Discontinued;
+            this.SaveChanges();
+        }
+
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //                 IConfiguration config = new ConfigurationBuilder()
+        //         .AddJsonFile("appsettings.json", true, true)
+        //         .Build();
+        //     optionsBuilder.UseSqlServer(@config["BloggingContext:ConnectionString"]);
+        // }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
